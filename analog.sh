@@ -3,6 +3,7 @@
 # 굵은 글씨와 색상 정의
 BOLD="\033[1m"
 GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 NC='\033[0m'
@@ -96,8 +97,24 @@ if [ $? -ne 0 ]; then
 fi
 KEY=$(echo $RESPONSE | jq -r '.result')
 echo -e "로테이션키는 다음과 같습니다: ${GREEN}$KEY${NC}"
-echo
+read -p "로테이션키를 따로 저장해두시고 엔터를 눌러주세요: "
+
+echo -e "${BOLD}FAUCET 과정을 진행합니다..${NC}"
+echo -e "${YELLOW}해당 사이트로 이동하여 주세요: hhttps://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.testnet.analog.one#/accounts${NC}"
+echo -e "${YELLOW}계정들을 눌러서 계정을 생성하거나 기존에 있던 계정의 주소를 확인해주세요.${NC}"
+echo -e "${YELLOW}가이드에따라 Faucet을 받아주세요: https://docs.analog.one/documentation/resources/tooling/utilities/testnet-faucet${NC}"
+read -p "Faucet을 받으시면 엔터를 눌러주세요: "
+
+echo -e "${BOLD}밸리데이터 등록을 진행합니다..${NC}"
+echo -e "${YELLOW}해당 사이트로 이동하여 주세요: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.testnet.analog.one#/staking/actions${NC}"
+echo -e "${YELLOW}Validator오른쪽 상단 모서리에 있는 옵션 을 클릭하세요${NC}"
+echo -e "${YELLOW}stash account아날로그 지갑을 선택하고 기타 세부 정보는 기본값으로 유지하세요.${NC}"
+echo -e "${YELLOW}다음버튼을 클릭한 후 keys from rotatekeys에 위에서 저장한 당신의 로테이션키를 적으세요.${NC}"
+echo -e "${YELLOW}리워드 커미션은 1~10 사이의 수 중 자유롭게 선택하세요.${NC}"
+read -p "Bond & Validate를 클릭한 후 엔터를 눌러주세요: "
 
 # 작업 완료 메시지
+echo -e "${GREEN}해당 사이트로 접속하여 구글폼을 반드시 남기고 팀의 승인을 기다리세요.${NC}"
+echo -e "${YELLOW}https://l5d87lam6fy.typeform.com/to/kwlADm6U?typeform-source=docs.analog.one.${NC}"
 echo -e "${GREEN}모든 작업이 완료되었습니다. 컨트롤+A+D로 스크린을 종료해주세요.${NC}"
 echo -e "${GREEN}스크립트 작성자: https://t.me/kjkresearch${NC}"
