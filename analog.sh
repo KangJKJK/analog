@@ -51,6 +51,14 @@ echo
 echo -e "${BLUE}노드 이름을 기억해야 하며, 화이트리스트 폼 제출 시 필요합니다.${NC}"
 echo
 
+# 5. UFW 설치 및 포트 개방
+execute_with_prompt "UFW 설치 중..." "sudo apt-get install -y ufw"
+execute_with_prompt "필요한 포트 개방 중..." \
+    "sudo ufw enable && \
+    sudo ufw allow ssh && \
+    sudo ufw allow 9944/tcp && \
+    sudo ufw allow 30303/tcp && \"
+
 # Analog Timechain Docker 컨테이너 실행
 echo -e "${BLUE}Analog Timechain Docker 컨테이너를 실행 중입니다...${NC}"
 echo
@@ -79,9 +87,6 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 echo
-
-# 잠시 대기
-sleep 5
 
 # jq 설치
 sudo apt-get install jq
