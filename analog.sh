@@ -117,6 +117,7 @@ echo -e "${YELLOW}해당 사이트로 이동하여 주세요: https://polkadot.j
 echo -e "${YELLOW}Validator오른쪽 상단 모서리에 있는 옵션 을 클릭하세요${NC}"
 echo -e "${YELLOW}stash account에는 생성한 아날로그 지갑을 선택하고 기타 세부 정보는 기본값으로 유지하세요. 이 지갑이 Analog토큰을 보관하는 지갑이됩니다.${NC}"
 echo -e "${YELLOW}다음버튼을 클릭한 후 keys from rotatekeys에 위에서 저장한 당신의 로테이션키를 적으세요.${NC}"
+echo -e "${YELLOW}payment destination에는 본인의 지갑을 선택하세요. 리워드지갑으로 스태쉬어카운트와 동일한 지갑이 되어도 괜찮습니다.${NC}"
 echo -e "${YELLOW}리워드 커미션은 1~10 사이의 수 중 자유롭게 선택하세요.${NC}"
 read -p "Bond & Validate를 클릭한 후 엔터를 눌러주세요: "
 
